@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FlowForge AI builds modern websites and smarter business automation.">
+  <title>FlowForge AI | Websites & Automation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: #070910;
+  color: #f5f7ff;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --blue: #5685ff;
+  --cyan: #59d8ff;
+  --muted: #9299ae;
+  --border: rgba(255,255,255,0.09);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section {
+  position: relative;
+}
+
+.section {
+  padding: 110px 9%;
+}
+
+.glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.glow-one {
+  background: #345fff;
+  top: 100px;
+  left: -200px;
+}
+
+.glow-two {
+  background: #873bff;
+  top: 550px;
+  right: -200px;
+}
+
+/* NAVBAR */
+
+.navbar {
+  min-height: 82px;
+  padding: 0 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 10;
+  background: rgba(7,9,16,0.85);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.logo > span:last-child {
+  color: var(--cyan);
+  margin-left: -8px;
+}
+
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #5187ff, #8d54ff);
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  font-size: 13px;
+  color: #b4b9c9;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.nav-btn {
+  padding: 12px 22px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 670px;
+  padding: 110px 9%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+.status-dot,
+.mini-dot {
+  display: inline-block;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background: #58dfad;
+  margin-right: 9px;
+  box-shadow: 0 0 12px #58dfad;
+}
+
+.hero h1,
+.section-heading h2,
+.work-heading h2,
+.about h2,
+.contact h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(44px, 6vw, 76px);
+  line-height: 1.07;
+  letter-spacing: -3px;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.work-heading h2 span,
+.about h2 span,
+.contact h2 span {
+  background: linear-gradient(90deg, #5a8bff, #63dcff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-description {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.9;
+  max-width: 490px;
+  margin: 25px 0;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 23px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary-btn {
+  color: white;
+  background: linear-gradient(110deg, #4c77ff, #7854f7);
+  box-shadow: 0 8px 30px rgba(76,119,255,0.2);
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(76,119,255,0.4);
+}
+
+.secondary-btn {
+  border: 1px solid var(--border);
+  color: #d2d8e8;
+}
+
+.secondary-btn:hover {
+  border-color: var(--cyan);
+}
+
+.hero-note {
+  color: #8f98ad;
+  font-size: 12px;
+  margin-top: 35px;
+}
+
+.hero-note span {
+  color: var(--cyan);
+  margin-right: 8px;
+}
+
+/* HERO VISUAL */
+
+.hero-visual {
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(100,140,255,0.2);
+  border-radius: 50%;
+}
+
+.orbit-one {
+  width: 340px;
+  height: 340px;
+  animation: rotate 22s linear infinite;
+}
+
+.orbit-two {
+  width: 430px;
+  height: 430px;
+  border-style: dashed;
+  animation: rotate 35s linear infinite reverse;
+}
+
+.core-card {
+  width: min(310px, 85%);
+  min-height: 290px;
+  padding: 24px;
+  border: 1px solid rgba(105,157,255,0.3);
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(26,38,73,0.95),
+    rgba(12,15,30,0.96)
+  );
+  box-shadow: 0 20px 90px rgba(56,103,255,0.2);
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(15px);
+}
+
+.core-top {
+  color: #aab6d7;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.live {
+  float: right;
+  color: #56dfad;
+}
+
+.core-symbol {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 90px;
+  font-weight: 700;
+  text-align: center;
+  margin: 25px 0 12px;
+  background: linear-gradient(135deg, #65a5ff, #9c69ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.core-card h3 {
+  text-align: center;
+  font-size: 17px;
+}
+
+.core-card p {
+  color: var(--muted);
+  text-align: center;
+  margin-top: 8px;
+  font-size: 11px;
+}
+
+.core-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+  color: #8d9fc8;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.floating-card {
+  position: absolute;
+  z-index: 3;
+  padding: 14px 18px;
+  background: #161e35;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 11px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+}
+
+.floating-card span {
+  color: var(--cyan);
+  margin-right: 8px;
+}
+
+.float-top {
+  top: 40px;
+  right: 0;
+}
+
+.float-bottom {
+  bottom: 35px;
+  left: 0;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* SERVICES */
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 55px;
+}
+
+.section-heading h2,
+.work-heading h2,
+.about h2,
+.contact h2 {
+  font-size: clamp(38px, 5vw, 57px);
+}
+
+.section-heading > p,
+.work-heading > p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-top: 20px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  min-height: 290px;
+  padding: 30px;
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, #111625, #0c101c);
+  border-radius: 13px;
+  transition: 0.35s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(88,143,255,0.6);
+  box-shadow: 0 20px 50px rgba(35,74,170,0.12);
+}
+
+.featured {
+  border-color: rgba(86,133,255,0.45);
+  background: linear-gradient(145deg, #18284b, #101526);
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(83,130,255,0.13);
+  color: var(--cyan);
+  font-size: 25px;
+  margin-bottom: 35px;
+}
+
+.card-number {
+  color: #7585a7;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin: 15px 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.service-card p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 13px;
+  min-height: 70px;
+}
+
+.service-card > a {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--cyan);
+}
+
+/* PORTFOLIO */
+
+.work-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  overflow: hidden;
+  background: #101521;
+}
+
+.project-image {
+  height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bakery-image {
+  background: linear-gradient(135deg, #eadbc4, #bc9574);
+  color: #483024;
+  position: relative;
+  flex-direction: column;
+}
+
+.mockup-label {
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+}
+
+.mockup-content {
+  text-align: center;
+}
+
+.mockup-content > span {
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.mockup-content h3 {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  line-height: 1.05;
+  margin: 15px 0;
+}
+
+.mockup-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #533a2e;
+  color: white;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.business-image {
+  background: radial-gradient(circle at 70% 30%, #3156a0, #10172b 65%);
+}
+
+.business-preview {
+  width: 75%;
+}
+
+.business-preview > span {
+  font-size: 10px;
+  color: #83d7ff;
+  letter-spacing: 3px;
+}
+
+.business-preview h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 40px;
+  margin: 15px 0;
+}
+
+.business-preview p {
+  color: #b2c2df;
+  font-size: 12px;
+}
+
+.business-line {
+  width: 75px;
+  height: 3px;
+  background: var(--cyan);
+  margin-top: 22px;
+}
+
+.project-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px;
+}
+
+.project-info h3 {
+  font-size: 15px;
+}
+
+.project-info p {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 7px;
+}
+
+.project-info > span {
+  font-size: 20px;
+  color: var(--cyan);
+}
+
+/* ABOUT */
+
+.about-box {
+  padding: 75px;
+  border: 1px solid rgba(92,140,255,0.22);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(76,105,255,0.17), transparent 35%),
+    #111827;
+}
+
+.about-box > p {
+  max-width: 550px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin: 25px 0;
+}
+
+/* PROCESS */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.process-item {
+  border-top: 1px solid rgba(91,143,255,0.5);
+  padding-top: 25px;
+}
+
+.process-item > span {
+  color: var(--cyan);
+  font-size: 12px;
+}
+
+.process-item h3 {
+  margin: 22px 0 12px;
+  font-size: 18px;
+}
+
+.process-item p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* CONTACT */
+
+.contact-box {
+  text-align: center;
+  padding: 90px 20px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: radial-gradient(
+    circle at 50% 100%,
+    rgba(72,104,255,0.18),
+    transparent 55%
+  );
+}
+
+.contact-box > p {
+  color: var(--muted);
+  margin: 25px 0 30px;
+  line-height: 1.8;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 35px 9%;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer > p,
+.copyright {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    margin-top: 30px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 20px 5%;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .nav-btn {
+    padding: 10px 13px;
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 80px 6%;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-visual {
+    min-height: 350px;
+  }
+
+  .orbit-one {
+    width: 270px;
+    height: 270px;
+  }
+
+  .orbit-two {
+    width: 320px;
+    height: 320px;
+  }
+
+  .float-top {
+    right: -5px;
+  }
+
+  .float-bottom {
+    left: -5px;
+  }
+
+  .section {
+    padding: 75px 6%;
+  }
+
+  .service-grid,
+  .work-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-heading {
+    display: block;
+  }
+
+  .project-image {
+    height: 250px;
+  }
+
+  .about-box {
+    padding: 40px 25px;
+  }
+
+  .contact h2 {
+    letter-spacing: -2px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">F</span>
+      FlowForge<span>AI</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <a href="#contact" class="nav-btn">Let's Talk ↗</a>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          DIGITAL SOLUTIONS STUDIO
+        </div>
+
+        <h1>
+          Build smarter.<br>
+          <span>Grow faster.</span>
+        </h1>
+
+        <p class="hero-description">
+          We create modern websites and intelligent
+          business workflows that help businesses
+          build a stronger digital presence.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#work" class="primary-btn">
+            Explore Our Work <span>↗</span>
+          </a>
+
+          <a href="#services" class="secondary-btn">
+            Discover Services
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <span>✦</span>
+          Websites & Business Automation
+        </div>
+
+      </div>
+
+      <!-- HERO VISUAL -->
+      <div class="hero-visual">
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="core-card">
+          <div class="core-top">
+            <span class="mini-dot"></span>
+            FLOWFORGE SYSTEM
+            <span class="live">LIVE</span>
+          </div>
+
+          <div class="core-symbol">F.</div>
+
+          <h3>Ideas into digital reality.</h3>
+
+          <p>
+            Websites. Automation. Innovation.
+          </p>
+
+          <div class="core-bottom">
+            <span>BUILD</span>
+            <span>·</span>
+            <span>CREATE</span>
+            <span>·</span>
+            <span>GROW</span>
+          </div>
+        </div>
+
+        <div class="floating-card float-top">
+          <span>✦</span>
+          Smart Websites
+        </div>
+
+        <div class="floating-card float-bottom">
+          <span>↗</span>
+          Smarter Workflows
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+
+      <div class="section-heading">
+        <div class="eyebrow">WHAT WE DO</div>
+        <h2>Digital solutions<br>built for <span>growth.</span></h2>
+        <p>
+          Practical digital services designed to
+          make your business stand out and work smarter.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <article class="service-card">
+          <div class="service-icon">⌘</div>
+          <span class="card-number">01 / WEBSITES</span>
+          <h3>Website Development</h3>
+          <p>
+            Beautiful, responsive and professional
+            websites designed around your business.
+          </p>
+          <a href="#contact">Explore service ↗</a>
+        </article>
+
+        <article class="service-card featured">
+          <div class="service-icon">✳</div>
+          <span class="card-number">02 / AUTOMATION</span>
+          <h3>Business Automation</h3>
+          <p>
+            Simplify repetitive tasks with practical
+            workflows, enquiry systems and integrations.
+          </p>
+          <a href="#contact">Explore service ↗</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">✧</div>
+          <span class="card-number">03 / AI SOLUTIONS</span>
+          <h3>AI-Assisted Solutions</h3>
+          <p>
+            Explore useful AI-powered features and
+            digital tools that address real business needs.
+          </p>
+          <a href="#contact">Explore service ↗</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section work" id="work">
+
+      <div class="work-heading">
+        <div>
+          <div class="eyebrow">SELECTED PROJECTS</div>
+          <h2>Ideas made <span>visible.</span></h2>
+        </div>
+
+        <p>
+          A selection of website concepts and
+          development experiments.
+        </p>
+      </div>
+
+      <div class="work-grid">
+
+        <article class="project-card">
+          <div class="project-image bakery-image">
+            <div class="mockup-label">THE DAILY BAKE</div>
+            <div class="mockup-content">
+              <span>FRESHLY BAKED</span>
+              <h3>A little joy<br>in every bite.</h3>
+              <div class="mockup-button">EXPLORE MENU</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Bakery Website</h3>
+              <p>Responsive Website · Concept Project</p>
+            </div>
+            <span>↗</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image business-image">
+            <div class="business-preview">
+              <span>YOUR BRAND.</span>
+              <h3>Built for<br>what's next.</h3>
+              <p>Modern digital experiences.</p>
+              <div class="business-line"></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Business Website</h3>
+              <p>Web Design · Concept Project</p>
+            </div>
+            <span>↗</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+
+      <div class="about-box">
+        <div class="eyebrow">WHY FLOWFORGE AI</div>
+
+        <h2>
+          Technology should<br>
+          make things <span>simpler.</span>
+        </h2>
+
+        <p>
+          We are building practical digital solutions
+          that help businesses present themselves
+          online and organise everyday workflows.
+        </p>
+
+        <a href="#contact" class="primary-btn">
+          Start a Conversation ↗
+        </a>
+      </div>
+
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section process">
+      <div class="section-heading">
+        <div class="eyebrow">OUR APPROACH</div>
+        <h2>Simple process.<br><span>Clear results.</span></h2>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-item">
+          <span>01</span>
+          <h3>Discover</h3>
+          <p>Understand your business and requirements.</p>
+        </div>
+
+        <div class="process-item">
+          <span>02</span>
+          <h3>Design</h3>
+          <p>Plan the structure and digital experience.</p>
+        </div>
+
+        <div class="process-item">
+          <span>03</span>
+          <h3>Develop</h3>
+          <p>Build and test the website or workflow.</p>
+        </div>
+
+        <div class="process-item">
+          <span>04</span>
+          <h3>Deliver</h3>
+          <p>Present the finished work and hand it over.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+
+      <div class="contact-box">
+        <div class="eyebrow">HAVE A PROJECT IN MIND?</div>
+
+        <h2>
+          Let's build something<br>
+          <span>extraordinary.</span>
+        </h2>
+
+        <p>
+          Tell us about your idea. Let's explore
+          what we can create together.
+        </p>
+
+        <a
+          href="https://www.instagram.com/flowfo.rgeai/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="primary-btn">
+          Contact Us on Instagram ↗
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="#" class="logo">
+      <span class="logo-icon">F</span>
+      FlowForge<span>AI</span>
+    </a>
+
+    <p>Building smarter digital experiences.</p>
+
+    <span class="copyright">
+      © 2026 FlowForge AI. Working brand concept.
+    </span>
+  </footer>
+
+</body>
+</html>
